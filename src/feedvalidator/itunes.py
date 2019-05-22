@@ -26,6 +26,12 @@ class itunes:
   def do_itunes_image(self):
     return image(), noduplicates()
 
+  def do_itunes_title(self):
+    return nonhtml(), nonblank(), noduplicates()
+
+  def do_itunes_episode(self):
+    return positiveInteger(), nonblank(), noduplicates()
+  
 class itunes_channel(itunes):
   from .logging import MissingItunesElement
 
